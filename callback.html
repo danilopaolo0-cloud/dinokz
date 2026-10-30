@@ -1,0 +1,12 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Volviendo a DinoKz</title>
+<style>body{margin:0;background:#EEF1F4;color:#17202B;font:16px/1.6 system-ui,sans-serif}main{max-width:560px;margin:0 auto;padding:64px 20px}a{color:#14533F}</style></head>
+<body><main><h1>Volviendo a DinoKz…</h1>
+<p id="m">Si no pasa nada en unos segundos, revisa que DinoKz esté abierto en tu computadora y <a id="l" href="#">haz clic aquí</a>.</p>
+<script>
+// TikTok solo acepta direcciones https. Esta pagina recibe la respuesta y la pasa a DinoKz en tu computadora.
+var q = location.search, st = new URLSearchParams(q).get('state') || '';
+var port = (st.split('_').pop() || '').replace(/\D/g, '') || '8000';
+var dest = 'http://127.0.0.1:' + port + '/api/tiktok/callback' + q;
+document.getElementById('l').href = dest;
+location.replace(dest);
+</script></main></body></html>
